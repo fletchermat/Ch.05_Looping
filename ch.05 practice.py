@@ -40,6 +40,7 @@ while not done:
     guesses = 0
     num = random.randint(0, 100)
     user = int(input("Im thinking of a number 0 through 100. What is it?"))
+    guesses += 1
     new = False
     while not new:
         if user < num:
@@ -53,7 +54,7 @@ while not done:
         else:
             print("It was",num,"you got it in",guesses,"geusses!")
             ask = input("Play again?")
-            if ask.lower() == "yes" or ask.lower() == "y":
+            if ask.lower() == "yes" or ask.lower() == "y" or ask.lower() == "yep" or ask.lower() == "yeah" or ask.lower() == "i do":
                 new = True
             else:
                 new = True
