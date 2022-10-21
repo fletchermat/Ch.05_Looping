@@ -1,15 +1,15 @@
   #Sign your name:________________
-
+import random
 '''
  1. Make the following program work.
 '''
-print("This program takes three numbers and returns the sum.")
-total = 0
-
-for i in range(3):
-    x = input("Enter a number: ")
-    total = total + i
-print("The total is:", total)
+# print("This program takes three numbers and returns the sum.")
+# total = 0
+#
+# for i in range(3):
+#     user = int(input("Enter a number: "))
+#     total += user
+# print("The total is:", total)
   
 
 
@@ -45,7 +45,8 @@ print("The total is:", total)
 '''
   4. Write a program that prints a random integer from 1 to 10 (inclusive).
 '''
-
+# num = random.randint(1,10)
+# print(num)
 
 
 
@@ -61,3 +62,31 @@ print("The total is:", total)
      if statements.
       
 '''
+print("This program asks for seven numbers and then prints the sum.")
+total = 0
+neg = 0
+pos = 0
+zero = 0
+for i in range(7):
+    user = int(input("Enter a number: "))
+    total += user
+    if user <0:
+        neg += 1
+    elif user >0:
+        pos += 1
+    else:
+        zero += 1
+
+print("The total is:", total)
+if neg > 1 or neg == 0:
+    print("There were",neg,"negative numbers")
+else:
+    print("There was 1 negative number")
+if pos > 1 or pos == 0:
+    print("There were",pos,"positive numbers")
+else:
+    print("There was 1 positive number")
+if zero > 1 or zero == 0:
+    print("There were",zero,"zeros")
+else:
+    print("There was 1 zero")
