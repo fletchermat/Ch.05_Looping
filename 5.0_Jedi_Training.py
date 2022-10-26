@@ -10,7 +10,7 @@ import random
 #     user = int(input("Enter a number: "))
 #     total += user
 # print("The total is:", total)
-  
+#
 
 
 '''
@@ -47,7 +47,8 @@ import random
 '''
 # num = random.randint(1,10)
 # print(num)
-
+# or
+# print(random.randint(1,10))
 
 
 
@@ -76,17 +77,17 @@ for i in range(7):
         pos += 1
     else:
         zero += 1
-
+print()
 print("The total is:", total)
 if neg > 1 or neg == 0:
-    print("There were",neg,"negative numbers")
+    print("\033[1;34mThere were",neg,"negative numbers")
 else:
-    print("There was 1 negative number")
+    print("\033[1;34mThere was 1 negative number")
 if pos > 1 or pos == 0:
-    print("There were",pos,"positive numbers")
+    print("\033[1;31mThere were",pos,"positive numbers")
 else:
-    print("There was 1 positive number")
+    print("\033[1;31mThere was 1 positive number")
 if zero > 1 or zero == 0:
-    print("There were",zero,"zeros")
+    print("\033[1;38mThere were",zero,"zeros")
 else:
-    print("There was 1 zero")
+    print("\033[1;32mThere was 1 zero")

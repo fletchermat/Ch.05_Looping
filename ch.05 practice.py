@@ -55,9 +55,18 @@ while not done:
             guesses += 1
         else:
             print("\033[1;33m It was",num,"you got it in",guesses,"geusses!")
-            ask = input("\033[0;0m Play again?")
-            if ask.lower() == "yes" or ask.lower() == "y" or ask.lower() == "yep" or ask.lower() == "yeah" or ask.lower() == "i do":
+            ask = input("\033[0;0m Do you want to play again?")
+            if ask.lower() == "yes" or ask.lower() == "y" or ask.lower() == "yep" or ask.lower() == "yeah" or ask.lower() == "i do" or ask.lower() == "sure" or ask.lower() == "definitely" or ask.lower() == "why not" or ask.lower() == "yea" or ask.lower() == "ye" or ask.lower() == "hell yeah" or ask.lower() == "you bet" or ask.lower() == "yes sir" or ask.lower() == "i guess" or ask.lower() == "yes please":
+
                 new = True
+            elif ask.lower() == "should i" or ask.lower() == "should i?":
+                print("Yes, you should.")
+                ask = input("\033[0;0m Do you want to play again?")
+                if ask.lower() == "yes" or ask.lower() == "y" or ask.lower() == "yep" or ask.lower() == "yeah" or ask.lower() == "i do" or ask.lower() == "sure" or ask.lower() == "definitely" or ask.lower() == "why not" or ask.lower() == "yea" or ask.lower() == "ye" or ask.lower() == "hell yeah" or ask.lower() == "you bet" or ask.lower() == "yes sir" or ask.lower() == "i guess" or ask.lower() == "yes please":
+                    new = True
+                else:
+                    new = True
+                    done = True
             else:
                 new = True
                 done = True

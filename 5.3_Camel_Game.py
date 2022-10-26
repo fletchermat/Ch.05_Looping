@@ -115,11 +115,11 @@ while not done:
         if abs(miles_traveled-natives_distance) > 20 and done == False: #Sandstorm
             storm = random.randint(1,5)
             if storm == 4:
-                back = random.randint(5, 8)
+                back = random.randint(5, 12)
                 print("\033[1;33m A sandstorm set you back",back,"miles")
                 miles_went -= back
                 storm = 2
-        natives_distance += random.randint(7,17)
+        natives_distance += random.randint(9,16)
         miles_went += random.randint(10,23)
         miles_traveled += miles_went
         thirst += 1
@@ -218,6 +218,7 @@ while not done:
             canteen = 4
 
 
+
 if win == 1:
     print()
     again = input(" Continue? y/n: ")
@@ -313,19 +314,21 @@ if win == 1:
             elif answer.lower() == "c":     # full speed ahead
                 print()
                 if abs(miles_traveled - natives_distance) > 20 and done == False:  # Sandstorm
-                    storm = random.randint(1, 5)
+                    storm = random.randint(1, 4)
                     if storm == 4:
-                        back = random.randint(5, 8)
+                        back = random.randint(5, 12)
                         print("\033[1;33m A sandstorm set you back", back, "miles")
                         miles_went -= back
                         storm = 2
-                natives_distance += random.randint(7,17)
-                miles_went += random.randint(10,23)
+                natives_distance += random.randint(8,15)
+                miles_went += random.randint(9,23)
                 miles_traveled += miles_went
                 thirst += 1
                 camel_tiredness += random.randint(1,3)
-                if miles_went != 0:
+                if miles_went > 1 or miles_went == 0:
                     print("\033[1;32m You traveled", miles_went, "miles.")
+                elif miles_went < 0:
+                    print("\033[1;33m You were set back", abs(miles_went), "miles")
                 else:
                     print("\033[1;32m You traveled 1 mile")
                 if success == 2:           # trap result
@@ -349,7 +352,7 @@ if win == 1:
                 if abs(miles_traveled - natives_distance) > 20 and done == False:  # Sandstorm
                     storm = random.randint(1, 5)
                     if storm == 4:
-                        back = 5
+                        back = random.randint(5,12)
                         print("\033[1;33m A sandstorm set you back", back, "miles")
                         miles_went -= back
                         storm = 2
@@ -358,8 +361,10 @@ if win == 1:
                 miles_traveled += miles_went
                 thirst += 1
                 camel_tiredness += 1
-                if miles_went != 0:
+                if miles_went > 1 or miles_went == 0:
                     print("\033[1;32m You traveled", miles_went, "miles.")
+                elif miles_went <0:
+                    print("\033[1;33m You were set back",abs(miles_went),"miles")
                 else:
                     print("\033[1;32m You traveled 1 mile")
                 if success == 2:  # trap result
@@ -391,6 +396,11 @@ if win == 1:
                     break
                 else:
                     print("\033[1;32m You set a trap.")
+            elif answer == "DEAL":
+                print()
+                thirst -= 2
+                natives_distance += 7
+                print("\033[1;35m You sacrifice your blood for water")
 
 print("\033[1;34m You went a total of",miles_traveled,"miles.")
 
