@@ -33,7 +33,7 @@ while not done:
         done = True
         break
     elif camel_tiredness >= 8:
-        print("\033[1;31m Your camel died of exaustion, you are doomed to die by the natives.")
+        print("\033[1;31m Your camel died of exhaustion, you are doomed to die by the natives.")
         done = True
         break
     elif miles_traveled >= 200 and again.lower() != "y":
@@ -112,7 +112,7 @@ while not done:
 
     elif answer.lower() == "c":     # full speed ahead
         print()
-        if abs(miles_traveled-natives_distance) > 20 and done == False: #Sandstorm
+        if abs(miles_traveled-natives_distance) > 20 and done == False or storm == 4: #Sandstorm
             storm = random.randint(1,5)
             if storm == 4:
                 back = random.randint(5, 12)
@@ -147,7 +147,7 @@ while not done:
 
     elif answer.lower() == "b":     # moderate speed ahead
         print()
-        if abs(miles_traveled-natives_distance) > 20 and done == False: #Sandstorm
+        if abs(miles_traveled-natives_distance) > 20 and done == False or storm ==4: #Sandstorm
             storm = random.randint(1,5)
             if storm == 4:
                 back = 5
@@ -193,13 +193,13 @@ while not done:
             break
         else:
             print("\033[1;32m You set a trap.")
-    elif answer == "IMACHEATER":
+    elif answer == "CHEAT":
         natives_distance += random.randint(180,200)
         miles_went = random.randint(200,220)
         miles_traveled += miles_went
         thirst += 1
         camel_tiredness += 1
-        print("\033[1;32m You traveled", miles_went, "miles.")
+        print("\033[1;32m You traveled", miles_went, "miles... cheater.")
         if success == 2:  # trap result
             print("\033[1;32m The natives were set back by your trap")
             natives_distance -= random.randint(5, 40)
@@ -216,7 +216,11 @@ while not done:
             thirst = 0
             camel_tiredness = 0
             canteen = 4
-
+    elif answer == "PAIN":
+        storm = 4
+        natives_distance += random.randint(7,10)
+        print()
+        print("\033[1;35m You hear thunder in the distance")
 
 
 if win == 1:
@@ -236,7 +240,7 @@ if win == 1:
                 done = True
                 break
             elif camel_tiredness >= 8:
-                print("\033[1;31m Your camel died of exaustion, you are doomed to die by the natives.")
+                print("\033[1;31m Your camel died of exhaustion, you are doomed to die by the natives.")
                 done = True
                 break
             elif miles_traveled >= 200 and again.lower() != "y":
@@ -396,12 +400,30 @@ if win == 1:
                     break
                 else:
                     print("\033[1;32m You set a trap.")
-            elif answer == "DEAL":
+            elif answer.upper() == "DEAL":
                 print()
                 thirst -= 2
-                natives_distance += 7
+                natives_distance += random.randint(7,14)
                 print("\033[1;35m You sacrifice your blood for water")
-
+                print("\033[1;32m You feel refreshed")
+                print("\033[1;33m You shiver")
+            elif answer.upper() == "PAIN":
+                natives_distance += random.randint(7,14)
+                print()
+                print("\033[1;35m You hear thunder in the distance")
+                print("\033[1;33m You shiver")
+            elif answer.lower() == "eyes":
+                print()
+                natives_distance += random.randint(7, 14)
+                print("\033[1;35m You see something shimmer in the distance")
+                print("\033[1;32m You found an oasis!")
+                print(" Your canteen has been filled")
+                print(" Your thirst is gone")
+                print(" Your camel is well rested")
+                print("\033[1;33m You shiver")
+                thirst = 0
+                camel_tiredness = 0
+                canteen = 4
 print("\033[1;34m You went a total of",miles_traveled,"miles.")
 
 
