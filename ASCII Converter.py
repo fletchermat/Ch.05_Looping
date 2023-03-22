@@ -1,3 +1,4 @@
+import random
 # decrypt = [84, 72, 69, 83, 69, 67, 82, 69, 84, 72, 65, 84, 67, 79, 68, 69, 73, 83, 66, 79, 84, 84, 76, 69]
 # decrypted = ""
 # for num in decrypt:
@@ -8,9 +9,9 @@
 '''
 
 '''
-A = "F"
-B = 'G'
-C = 'H'
+A = chr(random.randint(ord('A'), ord('Z')))
+B = chr(random.randint(ord('A'), ord('Z')))
+C = chr(random.randint(ord('A'), ord('Z')))
 D = 'I'
 E = 'J'
 F = 'K'
@@ -34,4 +35,4 @@ W = 'B'
 X = 'C'
 Y = 'D'
 Z = 'E'
-print(T,S,E,B,E,H,T,S,K,O,O,L,T,I,D,E,H,G,U,Y,X,E,L,C,I,H,E,V,T,E,G,R,A,T,E,W,D,L,U,O,H,S)
+print(A)
